@@ -18,7 +18,7 @@ public:
     Astar(int w,int y);
     copyMap(Cube *newMap);
 private:
-    Cube *map;
+    Cube **map;
     int width;
     int high;
     list<Cube> queue;
