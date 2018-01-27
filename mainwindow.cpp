@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QList<int> a;
     list<int> b;
     b.push_back(32);
     b.push_back(2);
@@ -23,6 +22,28 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         cout << "b[" << i++ << "]:" << *iter << endl;
     }
+    Astar a(10,10);
+    Cube **map;
+    for(int i=0; i<10; i++)
+    {
+        for(int j=0; j<10; j++)
+        {
+            map[i][j].f= 0;
+            map[i][j].g= 0;
+            map[i][j].h= 0;
+            map[i][j].x = i;
+            map[i][j].y = j;
+        }
+    }
+    a.copyMap(map);
+    Cube src,dest;
+    src.x=1;
+    src.y=1;
+    dest.x=5;
+    dest.y=5;
+    a.searchPath(src,dest);
+
+
 }
 
 MainWindow::~MainWindow()

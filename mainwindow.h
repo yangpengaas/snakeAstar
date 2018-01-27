@@ -5,6 +5,7 @@
 #include<QList>
 #include<list>
 #include<iostream>
+#include "astar.h"
 using namespace std;
 namespace Ui {
 class MainWindow;
